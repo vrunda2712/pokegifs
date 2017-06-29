@@ -5,9 +5,12 @@ class PokemonsController < ApplicationController
       body = JSON.parse(res.body)
 
       render json: {
-        results:[
-          body["id"],body["name"],body["types"][0]['type']['name']
-        ]
+        "id": body["id"],
+        "name": body["name"],
+        "type": body["types"][0]['type']['name']
+        # results:[
+        #   body["id"],body["name"],body["types"][0]['type']['name']
+        # ]
       }
   end
 
